@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 import shap
 import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.rcParams['font.sans-serif'] = ['SimHei']
-matplotlib.rcParams['axes.unicode_minus'] = False
+# import matplotlib
+# matplotlib.rcParams['font.sans-serif'] = ['SimHei']
+# matplotlib.rcParams['axes.unicode_minus'] = False
 
 
 # Load the model
@@ -17,7 +17,7 @@ model = joblib.load('rf.pkl')
 # slope_options = {1: 'Upsloping (1)', 2: 'Flat (2)',  3: 'Downsloping (3)'}
 # thal_options = {1: 'Normal (1)',  2: 'Fixed defect (2)', 3: 'Reversible defect (3)'}
 # Define feature names
-feature_names = [ "年龄", "性别", "吸烟史", "饮酒史", "高血压史", "糖尿病史",'高脂血症史', "BMI","PLT","MPV",
+feature_names = [ "Age", "Sex", "Smoking", "Drinking", "hypertension", "Diabetes",'Hyperlipidemia', "BMI","PLT","MPV",
                   "CRP", "PT", "APTT", "TT", 'INR', "FIB", 'D-D']
 # Streamlit user interface
 st.title("伴右向左分流隐源性卒中风险预测")
