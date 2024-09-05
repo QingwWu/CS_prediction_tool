@@ -1,0 +1,6 @@
+joblib==1.0.1
+matplotlib==3.3.4
+numpy==1.19.3+mkl
+pandas==1.1.5
+shap==0.46.0
+streamlit==1.38.0
