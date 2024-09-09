@@ -13,12 +13,12 @@ feature_names = ["Age", "BMI", 'D-D','INR', "MPV","FIB"]
 # Streamlit user interface
 st.title("伴右向左分流隐源性卒中风险预测")
 # numerical input
-age = st.number_input("年龄:", min_value=20, max_value=100, value=36)
-BMI = st.number_input("体质量指数:", min_value=10.0, max_value=50.0, value=24.15)
-MPV = st.number_input("平均血小板体积:", min_value=1.0, max_value=50.0, value=10.30)
-INR = st.number_input("国际标准化比值:", min_value=0.01, max_value=10.0, value=0.90)
-FIB = st.number_input("纤维蛋白原:", min_value=1.0, max_value=50.0, value=3.04)
-DD = st.number_input("D二聚体:", min_value=10, max_value=5000, value=380)
+age = st.number_input("年龄(Age):", min_value=20, max_value=100, value=36)
+BMI = st.number_input("体质量指数(BMI):", min_value=10.0, max_value=50.0, value=24.15)
+MPV = st.number_input("平均血小板体积(MPV):", min_value=1.0, max_value=50.0, value=10.30)
+INR = st.number_input("国际标准化比值(INR):", min_value=0.01, max_value=10.0, value=0.90)
+FIB = st.number_input("纤维蛋白原(FIB):", min_value=1.0, max_value=50.0, value=3.04)
+DD = st.number_input("D-二聚体(DD):", min_value=10, max_value=5000, value=380)
 
 # Process inputs and make predictions
 feature_values = [age, BMI, DD, INR, MPV, FIB]
