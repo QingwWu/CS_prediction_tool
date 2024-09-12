@@ -29,9 +29,9 @@ if st.button("预测"):
     predicted_proba = model.predict_proba(features)[0]
     # Display prediction results
     # st.write(f"**预测类别:** {predicted_class}")
-    st.write(f"**隐源性卒中发生概率:** {predicted_proba[：1]}")
+    st.write(f"**隐源性卒中发生概率:** {predicted_proba[1]}")
     # Generate advice based on prediction results
-    probability = predicted_proba[：1] * 100
+    probability = predicted_proba[1] * 100
     if predicted_class == 1:
         if predicted_proba[predicted_class] >0.8:
             advice = (f"根据我们的模型，您患隐源性卒中的风险很高。" f"该模型预测您患隐源性卒中的概率为 {probability:.1f}%。"  
