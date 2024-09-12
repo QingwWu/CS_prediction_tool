@@ -28,10 +28,10 @@ if st.button("预测"):
     predicted_class = model.predict(features)[0]
     predicted_proba = model.predict_proba(features)[0]
     # Display prediction results
-    st.write(f"**预测类别:** {predicted_class}")
-    st.write(f"**预测概率:** {predicted_proba[predicted_class]}")
+    # st.write(f"**预测类别:** {predicted_class}")
+    st.write(f"**隐源性卒中发生概率:** {predicted_proba[：1]}")
     # Generate advice based on prediction results
-    probability = predicted_proba[predicted_class] * 100
+    probability = predicted_proba[：1] * 100
     if predicted_class == 1:
         if predicted_proba[predicted_class] >0.8:
             advice = (f"根据我们的模型，您患隐源性卒中的风险很高。" f"该模型预测您患隐源性卒中的概率为 {probability:.1f}%。"  
@@ -46,10 +46,10 @@ if st.button("预测"):
                 "虽然这只是一个估计，但它表明您可能面临风险。" "建议您咨询神经内科专家，以进行进一步评估" "确保您得到准确的诊断和必要的治疗。")
     else:
         if predicted_proba[predicted_class] > 0.8:
-            advice = (f"根据我们的模型，您患隐源性卒中的风险很低。" f"该模型预测您患隐源性卒中的概率是{100-probability:.1f}%。" "然而，保持健康的生活方式仍然非常重要。" 
+            advice = (f"根据我们的模型，您患隐源性卒中的风险很低。" f"该模型预测您患隐源性卒中的概率是{probability:.1f}%。" "然而，保持健康的生活方式仍然非常重要。" 
                    "建议您定期检查以监测您的心脏健康，"  "如果您出现任何症状，请及时就医。")
         else:
-            advice = (f"根据我们的模型，您患隐源性卒中的风险较低。" f"该模型预测您患隐源性卒中的概率是{100-probability:.1f}%。" "然而，保持健康的生活方式仍然非常重要。" 
+            advice = (f"根据我们的模型，您患隐源性卒中的风险较低。" f"该模型预测您患隐源性卒中的概率是{probability:.1f}%。" "然而，保持健康的生活方式仍然非常重要。" 
                    "建议您定期检查以监测您的心脏健康，"  "如果您出现任何症状，请及时就医。")
     st.write(advice)
     # Calculate SHAP values and display force plot
